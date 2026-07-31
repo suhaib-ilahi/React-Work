@@ -1,0 +1,63 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/currency-converter",
+      "destination": "/currency-converter/index.html"
+    },
+    {
+      "source": "/currency-converter/:path((?!.*\\..*).*)",
+      "destination": "/currency-converter/index.html"
+    },
+    {
+      "source": "/bg-color",
+      "destination": "/bg-color/index.html"
+    },
+    {
+      "source": "/bg-color/:path((?!.*\\..*).*)",
+      "destination": "/bg-color/index.html"
+    },
+    {
+      "source": "/password-generator",
+      "destination": "/password-generator/index.html"
+    },
+    {
+      "source": "/password-generator/:path((?!.*\\..*).*)",
+      "destination": "/password-generator/index.html"
+    },
+    {
+      "source": "/rtk-todo",
+      "destination": "/rtk-todo/index.html"
+    },
+    {
+      "source": "/rtk-todo/:path((?!.*\\..*).*)",
+      "destination": "/rtk-todo/index.html"
+    },
+    {
+      "source": "/todos",
+      "destination": "/todos/index.html"
+    },
+    {
+      "source": "/todos/:path((?!.*\\..*).*)",
+      "destination": "/todos/index.html"
+    },
+    {
+      "source": "/theme-toggler",
+      "destination": "/theme-toggler/index.html"
+    },
+    {
+      "source": "/theme-toggler/:path((?!.*\\..*).*)",
+      "destination": "/theme-toggler/index.html"
+    },
+    {
+      "source": "/ecommerce",
+      "destination": "/ecommerce/index.html"
+    },
+    {
+      "source": "/ecommerce/:path((?!.*\\..*).*)",
+      "destination": "/ecommerce/index.html"
+    }
+  ]
+}
