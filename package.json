@@ -1,0 +1,18 @@
+{
+  "name": "react-work-directory",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && npm run build:home && npm run build:currency-converter && npm run build:bg-color && npm run build:password-generator && npm run build:rtk-todo && npm run build:todos && npm run build:theme-toggler && npm run build:ecommerce",
+    "build:home": "mkdir -p dist && cp index.html dist/index.html",
+    "build:currency-converter": "npm --prefix ./currencyConverter ci && npm --prefix ./currencyConverter run build && mkdir -p dist/currency-converter && cp -R ./currencyConverter/dist/. ./dist/currency-converter/",
+    "build:bg-color": "npm --prefix ./bgColor ci && npm --prefix ./bgColor run build && mkdir -p dist/bg-color && cp -R ./bgColor/dist/. ./dist/bg-color/",
+    "build:password-generator": "npm --prefix ./PasswordGenerator ci && npm --prefix ./PasswordGenerator run build && mkdir -p dist/password-generator && cp -R ./PasswordGenerator/dist/. ./dist/password-generator/",
+    "build:rtk-todo": "npm --prefix ./RTKTodo ci && npm --prefix ./RTKTodo run build && mkdir -p dist/rtk-todo && cp -R ./RTKTodo/dist/. ./dist/rtk-todo/",
+    "build:todos": "npm --prefix \"./TODos/TO DOs\" ci && npm --prefix \"./TODos/TO DOs\" run build && mkdir -p dist/todos && cp -R \"./TODos/TO DOs/dist/.\" ./dist/todos/",
+    "build:theme-toggler": "npm --prefix \"./Theme Toggle/themeToggler\" ci && npm --prefix \"./Theme Toggle/themeToggler\" run build && mkdir -p dist/theme-toggler && cp -R \"./Theme Toggle/themeToggler/dist/.\" ./dist/theme-toggler/",
+    "build:ecommerce": "(cd \"./LastProject/Ecommerce/Ecommerce Frontend\" && npm ci --legacy-peer-deps && npx vite build) && mkdir -p dist/ecommerce && cp -R \"./LastProject/Ecommerce/Ecommerce Frontend/dist/.\" ./dist/ecommerce/",
+    "preview": "npm run build && python3 -m http.server 4173 --directory dist"
+  }
+}
