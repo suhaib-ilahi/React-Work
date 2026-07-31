@@ -17,6 +17,22 @@ This repository deploys all coursework projects under one Vercel domain with a c
 - `/theme-toggler` → `Theme Toggle/themeToggler`
 - `/ecommerce` → `LastProject/Ecommerce/Ecommerce Frontend`
 
+## Add a New Project
+
+To add one more project to this single-domain setup, update these places:
+
+1. **Assign a new route prefix** (example: `/my-app`).
+2. **Root homepage card**: add a new card/link in `/home/runner/work/React-Work/React-Work/index.html` pointing to that prefix.
+3. **Root build pipeline** (`/home/runner/work/React-Work/React-Work/package.json`):
+   - add a `build:my-app` script that builds the project and copies its `dist/` into `./dist/my-app/`
+   - include `build:my-app` in the root `build` script chain.
+4. **Project Vite config**: set `base: '/my-app/'` in that project's `vite.config.*`.
+5. **Router basename (if using React Router + BrowserRouter)**: set basename to `import.meta.env.BASE_URL` (same pattern as Ecommerce).
+6. **Vercel rewrites** (`/home/runner/work/React-Work/React-Work/vercel.json`):
+   - `"/my-app" -> "/my-app/index.html"`
+   - `"/my-app/:path((?!.*\\..*).*)" -> "/my-app/index.html"` for SPA deep links.
+7. **Update this README route mapping** with the new prefix and folder path.
+
 ## Local Development
 
 Run a project directly from its own folder:
