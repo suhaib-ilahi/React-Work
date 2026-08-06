@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuyCard</title>
+</head>
+<style>
+.container{
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+.mainBox{
+    margin: auto;
+    background: rgb(247, 245, 243);
+    width: 28rem;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 10px rgba(7, 32, 1, 0.7),
+                inset 0 0 5px rgba(15, 1, 29, 0.2);
+    transform: perspective(700px) ;
+    transition: transform 220ms ease, box-shadow 220ms ease;
+}
+.mainBox:hover,
+.mainBox:focus-visible {
+  transform: perspective(700px) ;
+  box-shadow: 0 24px 40px rgba(15, 23, 42, 0.35);
+}
+
+.popular {
+    border-radius: 2rem;
+    width: 5rem;
+    text-align: center;
+    background-color:  #6161d4;;
+    color: white;
+}
+.planType{
+    display: flex;
+}
+.planType p {
+    margin-right: 0.5rem;
+}
+.price {
+    display: flex;
+    align-items: last baseline;
+}
+.features ul li b {
+    color: green;
+}
+.features ul  {
+ list-style-type: none;
+ padding-left: 0px;
+}
+.features ul li {
+ margin-bottom: 0.5rem;
+}
+.mainBox button {
+    width: 28rem;
+    border-radius: 1rem;
+    height: 2.5rem;
+    background-color: #6161d4;
+    color: white;
+    border: none;
+      cursor: pointer;
+perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: transform 0.2s;
+}
+#getStarted:hover {
+    background-color: #5353ce;
+    transition: transform 0.2s;
+}
+
+</style>
+<body>
+    <div class="container">
+        <div class="mainBox">
+            <div class="planType">
+                 <p><b>Basic</b></p>
+               
+            <p class="popular">Popular</p>
+            </div>
+          
+            <div class="price">
+                <h1>$15</h1><p>/Month</p>
+            </div>
+            <p>Ideal for freelancers or solo makers looking to kick off their creative work with confidence.</p>
+            <div class="features">
+                <ul>
+                <li><b>✔</b> Full access to core tools</li>
+                <li><b>✔</b> Upto 3 Projects</li>
+                <li><b>✔</b> Solo Use Only</li>
+                <li><b>✔</b> Chat Support</li>
+                <li><b>✔</b> Cancel Anytime</li>
+                </ul>
+            </div>
+            <button id="getStarted">Get Started</button>
+        </div>
+    </div>
+</body>
+
+
+</html>
