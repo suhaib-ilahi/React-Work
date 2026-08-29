@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Coursework Directory</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: #0f172a;
+        color: #e2e8f0;
+      }
+      .wrapper {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 2rem 1rem 3rem;
+      }
+      h1 {
+        margin-top: 0;
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+      }
+      p {
+        color: #cbd5e1;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+      .card {
+        display: block;
+        border: 1px solid #334155;
+        border-radius: 0.75rem;
+        padding: 1rem;
+        text-decoration: none;
+        color: inherit;
+        background: #111827;
+        transition: border-color 0.2s ease, transform 0.2s ease;
+      }
+      .card:hover {
+        border-color: #38bdf8;
+        transform: translateY(-2px);
+      }
+      .path {
+        margin-top: 0.4rem;
+        font-size: 0.85rem;
+        color: #93c5fd;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrapper">
+      <h1>React Coursework Projects</h1>
+      <p>Single-domain project directory. Open any project from the list below.</p>
+
+      <section class="grid">
+        <a class="card" href="/currency-converter/">
+          <strong>Currency Converter</strong>
+          <div class="path">/currency-converter</div>
+        </a>
+        <a class="card" href="/bg-color/">
+          <strong>Background Color Changer</strong>
+          <div class="path">/bg-color</div>
+        </a>
+        <a class="card" href="/password-generator/">
+          <strong>Password Generator</strong>
+          <div class="path">/password-generator</div>
+        </a>
+        <a class="card" href="/rtk-todo/">
+          <strong>RTK Todo</strong>
+          <div class="path">/rtk-todo</div>
+        </a>
+        <a class="card" href="/todos/">
+          <strong>TO DOs</strong>
+          <div class="path">/todos</div>
+        </a>
+        <a class="card" href="/theme-toggler/">
+          <strong>Theme Toggler</strong>
+          <div class="path">/theme-toggler</div>
+        </a>
+        <a class="card" href="/ecommerce/">
+          <strong>Ecommerce Frontend</strong>
+          <div class="path">/ecommerce</div>
+        </a>
+      </section>
+    </main>
+  </body>
+</html>

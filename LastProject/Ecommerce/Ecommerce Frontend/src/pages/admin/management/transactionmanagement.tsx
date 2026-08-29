@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import AdminSidebar from "../../../components/admin/AdminSidebar";
-import { OrderItem } from "../../../models/types";
+import type { OrderItem } from "../../../models/types";
 import { server } from "../../../redux/store";
 
 const img =
@@ -11,7 +12,8 @@ const orderItems: OrderItem[] = [
   {
     name: "Puma Shoes",
     photo: img,
-    id: "asdsaasdas",
+    _id: "asdsaasdas",
+    productId: "asdsaasdas",
     quantity: 4,
     price: 2000,
   },
@@ -55,6 +57,8 @@ const TransactionManagement = () => {
       status: "Shipped",
     }));
   };
+
+  const deleteHandler = () => {};
 
   return (
     <div className="admin-container">

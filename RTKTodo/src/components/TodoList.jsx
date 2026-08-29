@@ -1,4 +1,4 @@
-import React from 'react'   
+import React, { useState } from 'react'
 // import { nanoid } from '@reduxjs/toolkit'
 import { useDispatch, useSelector, } from 'react-redux'
 import { deleteTodo } from '../features/todo/todoSlice'
@@ -6,9 +6,9 @@ import { deleteTodo } from '../features/todo/todoSlice'
 function TodoList() {
   const todosList = useSelector(state => state.todo.todos) 
   const dispatch = useDispatch()
-  const editTodo = (id) =>{
-      
-  })
+  const [isTodoEditable, setIsTodoEditable] = useState(false)
+  const editTodo = () => {
+    setIsTodoEditable(false)
   }
   
   return (
