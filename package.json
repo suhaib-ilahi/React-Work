@@ -3,16 +3,17 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "clean": "rm -rf dist",
-    "build": "npm run clean && npm run build:home && npm run build:currency-converter && npm run build:bg-color && npm run build:password-generator && npm run build:rtk-todo && npm run build:todos && npm run build:theme-toggler && npm run build:ecommerce",
-    "build:home": "mkdir -p dist && cp index.html dist/index.html",
-    "build:currency-converter": "npm --prefix ./currencyConverter ci && npm --prefix ./currencyConverter run build && mkdir -p dist/currency-converter && cp -R ./currencyConverter/dist/. ./dist/currency-converter/",
-    "build:bg-color": "npm --prefix ./bgColor ci && npm --prefix ./bgColor run build && mkdir -p dist/bg-color && cp -R ./bgColor/dist/. ./dist/bg-color/",
-    "build:password-generator": "npm --prefix ./PasswordGenerator ci && npm --prefix ./PasswordGenerator run build && mkdir -p dist/password-generator && cp -R ./PasswordGenerator/dist/. ./dist/password-generator/",
-    "build:rtk-todo": "npm --prefix ./RTKTodo ci && npm --prefix ./RTKTodo run build && mkdir -p dist/rtk-todo && cp -R ./RTKTodo/dist/. ./dist/rtk-todo/",
-    "build:todos": "npm --prefix \"./TODos/TO DOs\" ci && npm --prefix \"./TODos/TO DOs\" run build && mkdir -p dist/todos && cp -R \"./TODos/TO DOs/dist/.\" ./dist/todos/",
-    "build:theme-toggler": "npm --prefix \"./Theme Toggle/themeToggler\" ci && npm --prefix \"./Theme Toggle/themeToggler\" run build && mkdir -p dist/theme-toggler && cp -R \"./Theme Toggle/themeToggler/dist/.\" ./dist/theme-toggler/",
-    "build:ecommerce": "(cd \"./LastProject/Ecommerce/Ecommerce Frontend\" && npm ci --legacy-peer-deps && npx vite build) && mkdir -p dist/ecommerce && cp -R \"./LastProject/Ecommerce/Ecommerce Frontend/dist/.\" ./dist/ecommerce/",
-    "preview": "npm run build && python3 -m http.server 4173 --directory dist"
+    "clean": "node -e \"const fs=require('fs'); fs.rmSync('dist',{recursive:true,force:true});\"",
+    "build": "npm run clean && npm run build:home && npm run build:currency-converter && npm run build:bg-color && npm run build:password-generator && npm run build:rtk-todo && npm run build:todos && npm run build:theme-toggler && npm run build:tour-and-travel && npm run build:ecommerce",
+    "build:home": "node -e \"const fs=require('fs'); fs.mkdirSync('dist',{recursive:true}); fs.copyFileSync('index.html', 'dist/index.html');\"",
+    "build:currency-converter": "npm --prefix ./currencyConverter ci && npm --prefix ./currencyConverter run build && node -e \"const fs=require('fs'); fs.mkdirSync('dist/currency-converter',{recursive:true}); fs.cpSync('./currencyConverter/dist', './dist/currency-converter', {recursive:true});\"",
+    "build:bg-color": "npm --prefix ./bgColor ci && npm --prefix ./bgColor run build && node -e \"const fs=require('fs'); fs.mkdirSync('dist/bg-color',{recursive:true}); fs.cpSync('./bgColor/dist', './dist/bg-color', {recursive:true});\"",
+    "build:password-generator": "npm --prefix ./PasswordGenerator ci && npm --prefix ./PasswordGenerator run build && node -e \"const fs=require('fs'); fs.mkdirSync('dist/password-generator',{recursive:true}); fs.cpSync('./PasswordGenerator/dist', './dist/password-generator', {recursive:true});\"",
+    "build:rtk-todo": "npm --prefix ./RTKTodo ci && npm --prefix ./RTKTodo run build && node -e \"const fs=require('fs'); fs.mkdirSync('dist/rtk-todo',{recursive:true}); fs.cpSync('./RTKTodo/dist', './dist/rtk-todo', {recursive:true});\"",
+    "build:todos": "npm --prefix \"./TODos/TO DOs\" ci && npm --prefix \"./TODos/TO DOs\" run build && node -e \"const fs=require('fs'); fs.mkdirSync('dist/todos',{recursive:true}); fs.cpSync('./TODos/TO DOs/dist', './dist/todos', {recursive:true});\"",
+    "build:theme-toggler": "npm --prefix \"./Theme Toggle/themeToggler\" ci && npm --prefix \"./Theme Toggle/themeToggler\" run build && node -e \"const fs=require('fs'); fs.mkdirSync('dist/theme-toggler',{recursive:true}); fs.cpSync('./Theme Toggle/themeToggler/dist', './dist/theme-toggler', {recursive:true});\"",
+    "build:tour-and-travel": "npm --prefix \"./TourAndTravel/TourAndTravel\" ci && npm --prefix \"./TourAndTravel/TourAndTravel\" run build && node -e \"const fs=require('fs'); fs.mkdirSync('dist/tour-and-travel',{recursive:true}); fs.cpSync('./TourAndTravel/TourAndTravel/dist', './dist/tour-and-travel', {recursive:true});\"",
+    "build:ecommerce": "npm --prefix \"./LastProject/Ecommerce/Ecommerce Frontend\" ci --legacy-peer-deps && npm --prefix \"./LastProject/Ecommerce/Ecommerce Frontend\" run build && node -e \"const fs=require('fs'); fs.mkdirSync('dist/ecommerce',{recursive:true}); fs.cpSync('./LastProject/Ecommerce/Ecommerce Frontend/dist', './dist/ecommerce', {recursive:true});\"",
+    "preview": "npm run build && npx http-server dist -p 4173"
   }
 }

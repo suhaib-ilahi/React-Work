@@ -52,6 +52,22 @@
       "destination": "/theme-toggler/index.html"
     },
     {
+      "source": "/tour-and-travel",
+      "destination": "/tour-and-travel/index.html"
+    },
+    {
+      "source": "/tour-and-travel/:path((?!.*\\..*).*)",
+      "destination": "/tour-and-travel/index.html"
+    },
+    {
+      "source": "/TourAndTravel",
+      "destination": "/tour-and-travel/index.html"
+    },
+    {
+      "source": "/TourAndTravel/:path((?!.*\\..*).*)",
+      "destination": "/tour-and-travel/index.html"
+    },
+    {
       "source": "/ecommerce",
       "destination": "/ecommerce/index.html"
     },
