@@ -16,6 +16,7 @@ This repository deploys all coursework projects under one Vercel domain with a c
 - `/todos` → `TODos/TO DOs`
 - `/theme-toggler` → `Theme Toggle/themeToggler`
 - `/ecommerce` → `LastProject/Ecommerce/Ecommerce Frontend`
+- `/tour-travel` → `TourTravel`
 
 ## Add a New Project
 
