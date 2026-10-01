@@ -1,14 +1,17 @@
-import  { useContext } from 'react'
+import { useContext } from 'react'
 import ThemeContext from '../context/ThemeContext'
- 
 
-const Layout = () => {
-    const {theme, toggleTheme} = useContext(ThemeContext);
-    
+
+const Layout = ({ children }) => {
+  const { theme } = useContext(ThemeContext);
+
   return (
-      <div className={`h-full w-full  ${theme == 'dark' ? "bg-black" : "bg-amber-500"}`}>
-        <button onClick={() => toggleTheme()} className={`m-3 text-white p-3 rounded-xl bg-blue-900`}>Toggle</button>
-        </div>
+    <div
+      className={`${theme === 'dark' ? 'dark bg-slate-800 text-slate-100' : 'bg-slate-100 text-slate-900'} min-h-screen w-full transition-colors duration-200`
+      }
+    >
+      {children}
+    </div>
   )
 }
 
